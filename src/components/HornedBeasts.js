@@ -50,4 +50,3 @@ class HornedBeasts extends React.Component {
 
 export default HornedBeasts;
 
-///// haneen
