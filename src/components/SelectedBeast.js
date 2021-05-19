@@ -5,27 +5,32 @@ import Button from 'react-bootstrap/Button';
 
 
 class SelectedBeast extends React.Component {
+
+    
+    handleClose = () =>{
+        this.props.handleClose();
+    };
+
     render() {
+
         return (
             <>
-                <Button variant="primary" onClick={handleShow}>
-                    Launch demo modal
-                </Button>
-
-                <Modal show={show} onHide={handleClose}>
+                <Modal show={this.props.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Modal heading</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Body>
+                        <h2>{this.props.title}</h2>
+                        <img src={this.props.img_url} alt={this.props.title}></img>
+                        <p>{this.props.description}</p>
+                    </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <Button variant="secondary" onClick={this.handleClose}>
                             Close
-                </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            Save Changes
-                </Button>
+                    </Button>
                     </Modal.Footer>
                 </Modal>
+
             </>
 
         )
