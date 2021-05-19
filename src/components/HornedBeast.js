@@ -20,6 +20,10 @@ class HornedBeast extends React.Component {
 
   }
 
+  showing = () => {
+    this.props.showModal();
+  }
+
   render() {
     return (
       <div className = "beast" style ={{display: 'inline-block'}}>
@@ -30,7 +34,7 @@ class HornedBeast extends React.Component {
         <p>❤️{this.state.votes}</p> */}
 
         <Card style={{ width: '18rem'}}>
-          <Card.Img variant="top" src={this.props.imgURL} style={{ height: '18rem'}}/>
+          <Card.Img onClick = {this.showing} variant="top" src={this.props.imgURL} style={{ height: '18rem'}}/>
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Button variant="primary" onClick={this.increaseVotes} >Vote</Button>
