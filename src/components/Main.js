@@ -1,70 +1,24 @@
 import React from 'react';
-import HornedBeasts from './HornedBeasts';
-import data from './data.json';
-import SelectedBeast from './SelectedBeast'
+import HornedBeast from './HornedBeast';
 
 
-class Main extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: data,
-            show: false
-        }
-    }
-
-
-    // showModel = () => {
-    showModal = (active) => {
-        this.setState({
-            show: active
-        })
-
-    }
-
-
-
-    //  Example() {
-    //     const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-
-    render() {
-
-
-        return (
+class Main extends React.Component{
+    render(){
+        return(
             <>
-                <h1>Gallery of Hornes</h1>
-
-                {data.map(item => {
-                    return (
-                        <HornedBeasts
-                            title={item.title}
-                            imgURL={item.image_url}
-                            description={item.description}
-                        />
-                    )
-                })
-                }
-                {
-
-                    <SelectedBeast
-                        beastArr={this.state.horndBeastData}
-                        // showModel={this.showModel}
-                        handleClose={this.handleClose}
-                        handleShow={this.handleShow}
-                        show={this.state.show}
-
-                    />
-                }
+            <HornedBeast
+            title = {"UniWhal"}
+            imgURL = {"http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"}
+            descreption = {"A unicorn and a narwhal nuzzling their horns"}
+            />
+           <HornedBeast
+              title = {"Rhino Family"}
+              imgURL = {"https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80"}
+              descreption = {"Mother (or father) rhino with two babies"}
+           />
             </>
-
         )
     }
-};
-
+}
 
 export default Main;

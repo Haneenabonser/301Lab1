@@ -1,36 +1,19 @@
 import React from 'react';
-import Main from './components/Main.js';
-
-class App extends React.Component {
-
-  // constructor (props){
-  //   super(props);
-  //   this.state({
-  //     dataArrar : data
-  //   })
-  // }
-
-  constructor(props){
-    super(props);
-    this.state = {
-      show : false
-    }
-  }
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Main from './components/Main';
 
 
-
-  render(){
-
-
-    return(
-      <>
-      <Main/>
-
-
-
-      </>
-
-    )
-}};
+class App extends React.Component{
+   render(){
+       return(
+           <>
+           <Header/>
+           <Main/>
+           <Footer/>
+           </>
+       )
+   }
+}
 
 export default App;
