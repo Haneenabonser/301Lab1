@@ -3,12 +3,12 @@ import HornedBeast from './HornedBeast';
 import data from './data.json'
 
 
-class Main extends React.Component {
-    render() {
 
-
-        return (
+class Main extends React.Component{
+    render(){
+        return(
             <>
+
             {data.map(item=>{
                 return (
                     <HornedBeast
@@ -18,10 +18,10 @@ class Main extends React.Component {
                 />
                 )
             })}
+
             </>
-
         )
-    }};
+    }
+}
 
-
-    export default Main;
+export default Main;
