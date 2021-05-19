@@ -1,5 +1,5 @@
 import React from 'react';
-import HornedBeasts from './HornedBeasts';
+import HornedBeast from './HornedBeast';
 import data from './data.json'
 
 
@@ -9,10 +9,9 @@ class Main extends React.Component {
 
         return (
             <>
-            <h1>Gallery of Hornes</h1>
             {data.map(item=>{
                 return (
-                    <HornedBeasts
+                    <HornedBeast
                 title = {item.title}
                 imgURL = {item.image_url}
                 description = {item.description}
