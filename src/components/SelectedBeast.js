@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 
+
 class SelectedBeast extends React.Component {
 
     
@@ -17,12 +18,11 @@ class SelectedBeast extends React.Component {
             <>
                 <Modal show={this.props.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>{this.props.selected.title}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <h2>{this.props.title}</h2>
-                        <img src={this.props.img_url} alt={this.props.title}></img>
-                        <p>{this.props.description}</p>
+                        <img src={this.props.selected.img_url} alt={this.props.selected.title}></img>
+                        <p>{this.props.selected.description}</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.handleClose}>
