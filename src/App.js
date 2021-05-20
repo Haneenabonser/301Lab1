@@ -18,7 +18,6 @@ class App extends React.Component {
     }
 
     showModal = () => {
-            // data.find(i)
         this.setState({
             show: true
         })

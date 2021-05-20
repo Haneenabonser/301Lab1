@@ -9,34 +9,26 @@ import data from './data.json'
 
 class Main extends React.Component {
 
-
     submitForm = (event) =>{
         let numberOfHorns = event.target.value;
         let hornsData = data;
-        let result;
+        let filterdBeast;
         if(numberOfHorns){
-            result = hornsData.filter(item=>{
-            if (item.horns === numberOfHorns){
+            filterdBeast = hornsData.filter(item=>{
+            if (item.horns == numberOfHorns){
                 return item;
-
             }
         })
 
     }else{
-        result = hornsData;
+        filterdBeast = hornsData;
     }
-    this.props.showFilterd(result);
+    this.props.showFilterd(filterdBeast);
 }
-
-
-
-
-
 
     render() {
         return (
             <>
-
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Filter By number Of Hornes</Form.Label>
