@@ -2,40 +2,52 @@ import React from 'react';
 import HornedBeast from './HornedBeast';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button';
+import data from './data.json'
 
 
 
 
 class Main extends React.Component {
+
+    submitForm = (event) =>{
+        let numberOfHorns = event.target.value;
+        let hornsData = data;
+        let filterdBeast;
+        if(numberOfHorns){
+            filterdBeast = hornsData.filter(item=>{
+            if (item.horns == numberOfHorns){
+                return item;
+            }
+        })
+
+    }else{
+        filterdBeast = hornsData;
+    }
+    this.props.showFilterd(filterdBeast);
+}
+
     render() {
         return (
             <>
-
                 <Form>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                   </Form.Text>
+                        <Form.Label>Filter By number Of Hornes</Form.Label>
+                        <Form.Control as="select" onChange ={this.submitForm}> 
+                        <option value=''>All</option>
+                        <option value='1'>One</option>
+                        <option value='2'>Two</option>
+                        <option value='3'>Three</option>
+                        <option value='100'>Wow</option>
+                        </Form.Control>
+            
                     </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
                 </Form>
 
                 {this.props.data.map(item => {
                     return (
                         <HornedBeast
+                            key= {item.idx}
+                            index = {item.idx}
                             title={item.title}
                             imgURL={item.image_url}
                             description={item.description}
