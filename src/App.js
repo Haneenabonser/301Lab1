@@ -16,11 +16,7 @@ class App extends React.Component {
             show: false,
             selected: {},
         };
-    }
-
     
-
-   
 
     showModal = (title) => {
         let selectedBeast = data.find(item=>{
@@ -40,11 +36,18 @@ handleClose = () => {
     })
 };
 
+    showFilterd = (newArray) =>{
+        this.setState({
+            data : newArray
+        })
+    }
+   
+
     render() {
         return (
             <>
                 <Header />
-                <Main data={this.state.data} showModal={this.showModal} />
+                <Main data={this.state.data} showModal={this.showModal} showFilterd={this.showFilterd}/>
                 <Footer />
                 <SelectedBeast
                     data={this.state.data}
