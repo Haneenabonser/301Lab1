@@ -8,8 +8,7 @@ class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      votes: 0
-    
+      votes: 0,    
     }
 
   }
@@ -35,7 +34,7 @@ class HornedBeast extends React.Component {
         <p>❤️{this.state.votes}</p> */}
 
         <Card style={{ width: '18rem'}}>
-          <Card.Img onClick = {this.showing} variant="top" src={this.props.img_url} style={{ height: '18rem'}}/>
+          <Card.Img onClick = {this.showing} variant="top" src={this.props.image_url} style={{ height: '18rem'}}/>
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Button variant="primary" onClick={this.increaseVotes} >Vote</Button>

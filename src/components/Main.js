@@ -14,7 +14,7 @@ class Main extends React.Component {
                             key= {item.idx}
                             index = {item.idx}
                             title={item.title}
-                            img_url={item.image_url}
+                            image_url={item.image_url}
                             description={item.description}
                             showModal={this.props.showModal}
                         />
