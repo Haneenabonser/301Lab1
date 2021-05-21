@@ -18,22 +18,21 @@ class App extends React.Component {
         };
     }
 
-    
 
-   
-
-    showModal = (title) => {
+    showModal = (title) =>{
         let selectedBeast = data.find(item=>{
-            if (item.title === title){
+            if (item.title == title){
                 return item;
             }
-    });
-    this.setState({
-        show: true,
-        selected : selectedBeast,
-    })
-}
+        }
 
+        )
+        this.setState({
+            show : true,
+            selected : selectedBeast,
+        })
+    }
+    
 handleClose = () => {
     this.setState({
         show: false
@@ -47,7 +46,6 @@ handleClose = () => {
                 <Main data={this.state.data} showModal={this.showModal} />
                 <Footer />
                 <SelectedBeast
-                    data={this.state.data}
                     show={this.state.show}
                     handleClose={this.handleClose}
                     selected ={this.state.selected}
