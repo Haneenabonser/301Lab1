@@ -15,7 +15,7 @@ class App extends React.Component {
             data: data,
             show: false,
         };
-    }
+    };
 
     showModal = () => {
         this.setState({
@@ -29,11 +29,11 @@ class App extends React.Component {
         })
     };
 
-    showFilterd = (newArray) =>{
+    showFilterd = (filterdBeast) =>{
         this.setState({
-            data : newArray
+            data : filterdBeast
         })
-    }
+    };
    
 
     render() {
@@ -52,7 +52,7 @@ class App extends React.Component {
             </>
         )
     }
-}
+};
 
 export default App;
 
