@@ -11,18 +11,18 @@ class HornedBeast extends React.Component {
       votes: 0,    
     }
 
-  }
+  };
 
   increaseVotes = () => {
     this.setState({
       votes: this.state.votes + 1
     })
 
-  }
+  };
 
   showing = () => {
     this.props.showModal(this.props.title);
-  }
+  };
 
   render() {
     return (
