@@ -39,11 +39,18 @@ handleClose = () => {
     })
 };
 
+    showFilterd = (filterdBeast) =>{
+        this.setState({
+            data : filterdBeast
+        })
+    };
+   
+
     render() {
         return (
             <>
                 <Header />
-                <Main data={this.state.data} showModal={this.showModal} />
+                <Main data={this.state.data} showModal={this.showModal} showFilterd={this.showFilterd}/>
                 <Footer />
                 <SelectedBeast
                     show={this.state.show}
