@@ -2,6 +2,7 @@ import React from 'react';
 import HornedBeast from './HornedBeast';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form'
+import data from './data.json'
 
 
 class Main extends React.Component {
@@ -46,7 +47,7 @@ class Main extends React.Component {
                             key= {item.idx}
                             index = {item.idx}
                             title={item.title}
-                            imgURL={item.image_url}
+                            image_url={item.image_url}
                             description={item.description}
                             showModal={this.props.showModal}
                         />
