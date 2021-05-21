@@ -2,9 +2,6 @@ import React from 'react';
 import HornedBeast from './HornedBeast';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form'
-import data from './data.json'
-
-
 
 
 class Main extends React.Component {
@@ -53,7 +50,6 @@ class Main extends React.Component {
                             description={item.description}
                             showModal={this.props.showModal}
                         />
-
                     )
                 })};
                

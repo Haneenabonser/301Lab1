@@ -14,20 +14,28 @@ class App extends React.Component {
         this.state = {
             data: data,
             show: false,
+            selected: {},
         };
     };
 
-    showModal = () => {
-        this.setState({
-            show: true
-        })
-    };
 
-    handleClose = () => {
-        this.setState({
-            show: false
-        })
-    };
+    showModal = (title) => {
+        let selectedBeast = data.find(item=>{
+            if (item.title === title){
+                return item;
+            }
+    });
+    this.setState({
+        show: true,
+        selected : selectedBeast,
+    })
+}
+
+handleClose = () => {
+    this.setState({
+        show: false
+    })
+};
 
     showFilterd = (filterdBeast) =>{
         this.setState({
@@ -43,16 +51,16 @@ class App extends React.Component {
                 <Main data={this.state.data} showModal={this.showModal} showFilterd={this.showFilterd}/>
                 <Footer />
                 <SelectedBeast
-                    title={this.title}
-                    imgURL={this.image_url}
-                    description={this.description}
+                    data={this.state.data}
                     show={this.state.show}
                     handleClose={this.handleClose}
+                    selected ={this.state.selected}
                 />
             </>
         )
     }
 };
+
 
 export default App;
 
