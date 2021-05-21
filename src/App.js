@@ -16,7 +16,7 @@ class App extends React.Component {
             show: false,
             selected: {},
         };
-    }
+    };
 
 
     showModal = (title) =>{
@@ -31,7 +31,7 @@ class App extends React.Component {
             show : true,
             selected : selectedBeast,
         })
-    }
+    };
     
 handleClose = () => {
     this.setState({
@@ -53,7 +53,7 @@ handleClose = () => {
             </>
         )
     }
-}
+};
 
 
 export default App;
