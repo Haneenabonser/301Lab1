@@ -27,11 +27,6 @@ class HornedBeast extends React.Component {
   render() {
     return (
       <div className = "beast" style ={{display: 'inline-block'}}>
-        {/* <h2>{this.props.title}</h2>
-        <img src={this.props.imgURL} alt={this.props.title}></img>
-        <p>{this.props.description}</p>
-        <button onClick={this.increaseVotes}>Vote</button>
-        <p>❤️{this.state.votes}</p> */}
 
         <Card style={{ width: '18rem'}}>
           <Card.Img onClick = {this.showing} variant="top" src={this.props.image_url} style={{ height: '18rem'}}/>

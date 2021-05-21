@@ -21,7 +21,7 @@ class Main extends React.Component {
         filterdBeast = hornsData;
     }
     this.props.showFilterd(filterdBeast);
-}
+};
 
     render() {
         return (
@@ -51,11 +51,11 @@ class Main extends React.Component {
                             showModal={this.props.showModal}
                         />
                     )
-                })}
+                })};
                
             </>
         )
     }
-}
+};
 
 export default Main;
